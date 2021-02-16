@@ -30,6 +30,9 @@ $html = $modx->parseText($modx->mergeConditionalTagsContent($html), array(
 ));
 $html = $modx->parseText($html, $_lang, '[%', '%]');
 
+$_lang = array_map( 'addslashes', $_lang );
+$html = $modx->parseText($html, $_lang, '[%', ':addslashes%]');
+
 $modx->config['enable_filter'] = $filter;
 
 $modx->event->addOutput($html);
