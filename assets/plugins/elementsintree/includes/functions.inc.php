@@ -236,6 +236,8 @@ function createModulesList($action)
             $row['description'] = strip_tags($row['description']);
             if (isset($row['locked'])) {
                 $row['locked'] = $row['locked'] ? ' <em>(' . $_lang['locked'] . ')</em>' : '';
+            }else{
+                $row['locked'] = ' ';
             }
             $output .= $modx->parseText(
                 '<li class="eltree"><span><a href="index.php?id=[+id+]&amp;a=[+action+]" title="[+description+]" target="main" class="context-menu" data-type="site_modules" data-id="[+id+]"><span class="elementname">[+name+]</span><small> ([+id+])</small></a>
