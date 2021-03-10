@@ -135,7 +135,10 @@ function createElementsList($elmTable, $action, $nameField = 'name')
             $lockIcon = renderLockIcon($elmTable, $row['id']);
             $output .= '<li class="eltree">' . $lockIcon . '<span' . $class . '><a href="index.php?id=' . $row['id'] . '&amp;a=' . $action . '" title="' . strip_tags($row['description']) . '" target="main" class="context-menu" data-type="' . $elmTable . '" data-id="' . $row['id'] . '"><span class="elementname">' . $row['name'] . '</span><small> (' . $row['id'] . ')</small></a>
                 <a class="ext-ico" href="#" title="Open in new window" onclick="window.open(\'index.php?id=' . $row['id'] . '&a=' . $action . '\',\'gener\',\'width=800,height=600,top=\'+((screen.height-600)/2)+\',left=\'+((screen.width-800)/2)+\',toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=no\')"> <small><i class="fa fa-external-link" aria-hidden="true"></i></small></a>' . ($modx_textdir ? '&rlm;' : '') . '</span>';
-            $output .= $row['locked'] ? ' <em>(' . $_lang['locked'] . ')</em>' : '';
+
+            if (isset($row['locked'])) {
+                $output .= $row['locked'] ? ' <em>(' . $_lang['locked'] . ')</em>' : '';
+            }
             $output .= '</li>';
             $preCat = $row['category'];
         }
@@ -231,7 +234,9 @@ function createModulesList($action)
             );
             $row['textdir'] = $modx_textdir ? '&rlm;' : '';
             $row['description'] = strip_tags($row['description']);
-            $row['locked'] = $row['locked'] ? ' <em>(' . $_lang['locked'] . ')</em>' : '';
+            if (isset($row['locked'])) {
+                $row['locked'] = $row['locked'] ? ' <em>(' . $_lang['locked'] . ')</em>' : '';
+            }
             $output .= $modx->parseText(
                 '<li class="eltree"><span><a href="index.php?id=[+id+]&amp;a=[+action+]" title="[+description+]" target="main" class="context-menu" data-type="site_modules" data-id="[+id+]"><span class="elementname">[+name+]</span><small> ([+id+])</small></a>
                 <a class="ext-ico" href="#" title="Open in new window" onclick="window.open([+window.open+])"> <small><i class="fa fa-external-link" aria-hidden="true"></i></small></a>[+textdir+]</span>[+locked+]</li>',
