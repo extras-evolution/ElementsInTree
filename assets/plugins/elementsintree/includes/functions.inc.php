@@ -182,7 +182,7 @@ function createModulesList($action)
 
     if (isset($_SESSION['mgrRole']) && $_SESSION['mgrRole'] != 1) {
         $query = $modx->db->select(
-            'sm.id, sm.name, sm.description, sm.category, sm.disabled, cats.category as catname, cats.id as catid, mg.member',
+            'sm.id, sm.name, sm.description, sm.category, sm.disabled, sm.locked, cats.category as catname, cats.id as catid, mg.member',
             array(
                 '[+prefix+]site_modules as sm',
                 'LEFT JOIN [+prefix+]site_module_access as sma ON sma.module=sm.id',
@@ -197,7 +197,7 @@ function createModulesList($action)
         );
     } else {
         $query = $modx->db->select(
-            'sm.id, sm.name, sm.description, sm.category, sm.disabled, cats.category as catname, cats.id as catid',
+            'sm.id, sm.name, sm.description, sm.category, sm.disabled, sm.locked, cats.category as catname, cats.id as catid',
             array(
                 '[+prefix+]site_modules as sm',
                 'LEFT JOIN [+prefix+]categories as cats ON sm.category=cats.id'
