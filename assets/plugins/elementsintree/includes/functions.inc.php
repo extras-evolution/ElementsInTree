@@ -197,7 +197,7 @@ function createModulesList($action)
         );
     } else {
         $query = $modx->db->select(
-            'sm.id, sm.name, sm.description, sm.category, sm.disabled, cats.category as catname, cats.id as catid',
+            'sm.id, sm.name, sm.description, sm.category, sm.disabled, sm.locked, cats.category as catname, cats.id as catid',
             array(
                 '[+prefix+]site_modules as sm',
                 'LEFT JOIN [+prefix+]categories as cats ON sm.category=cats.id'
