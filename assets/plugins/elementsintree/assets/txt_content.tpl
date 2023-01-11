@@ -212,7 +212,8 @@
     font-size: 14px;
   }
   
-  li.eltree:before {
+  li.eltree:before,
+  li.eltree .editResource> i:before {
     font-family: "Font Awesome 5 Free";
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
@@ -222,8 +223,15 @@
     text-rendering: auto;
     line-height: 1;
     font-weight: 900;
+  }
+  
+  li.eltree:before {
     margin-right: 5px;
     margin-left: 5px;
+  }
+  
+  li.eltree .editResource > i:before {
+    content: "\f06e";
   }
 
   #tabTemp li.eltree:before {content: "\f1ea";}
