@@ -190,16 +190,21 @@
     width: 200px;
     width: calc(100% - 70px);
   }
-
+  
+  #treePane .tab-page {
+    position:relative;
+  }
+  
   .actionButtons--eit {
     position: absolute;
-    top: 25px;
-    right: 10px;
+    top: -2px;
+    right: 0px;
   }
 
   .actionButtons--eit li {
     margin-right: 5px;
     padding-left: 0 !important;
+	float: left;
   }
 
   .actionButtons--eit a {
