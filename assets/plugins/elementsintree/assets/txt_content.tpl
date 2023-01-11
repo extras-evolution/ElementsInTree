@@ -206,6 +206,19 @@
     padding: 5px 8px;
     font-size: 14px;
   }
+  
+  li.eltree:before {
+    font-family: "Font Awesome 5 Free";
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+    font-weight: 900;
+    margin-right: 5px;
+  }
 
   #tabTemp li.eltree:before {content: "\f1ea";}
   #tabCH   li.eltree:before {content: "\f009";}
