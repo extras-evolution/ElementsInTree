@@ -218,6 +218,7 @@
     line-height: 1;
     font-weight: 900;
     margin-right: 5px;
+    margin-left: 5px;
   }
 
   #tabTemp li.eltree:before {content: "\f1ea";}
