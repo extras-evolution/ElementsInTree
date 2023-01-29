@@ -190,21 +190,48 @@
     width: 200px;
     width: calc(100% - 70px);
   }
-
+  
+  #treePane .tab-page {
+    position:relative;
+  }
+  
   .actionButtons--eit {
     position: absolute;
-    top: 25px;
-    right: 10px;
+    top: -2px;
+    right: 0px;
   }
 
   .actionButtons--eit li {
     margin-right: 5px;
     padding-left: 0 !important;
+	float: left;
   }
 
   .actionButtons--eit a {
     padding: 5px 8px;
     font-size: 14px;
+  }
+  
+  li.eltree:before,
+  li.eltree .editResource> i:before {
+    font-family: "Font Awesome 5 Free";
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+    font-weight: 900;
+  }
+  
+  li.eltree:before {
+    margin-right: 5px;
+    margin-left: 5px;
+  }
+  
+  li.eltree .editResource > i:before {
+    content: "\f06e";
   }
 
   #tabTemp li.eltree:before {content: "\f1ea";}
