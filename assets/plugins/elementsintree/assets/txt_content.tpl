@@ -918,6 +918,10 @@
           }
         });
 
+        jQuery(document).on('click', '.tab-close', function(e){
+            reloadElementsInTree();
+        });
+
         setRememberCollapsedCategories();
 
       });
